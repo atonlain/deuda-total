@@ -16,14 +16,13 @@ var personas = [
 	}
 ]
 
-var deudaTotal = 0;
-personas.forEach(function(persona) {
+var deudas = personas.map(function(persona) {
 	var deuda = 0;
 	persona.compras.forEach(function(compra) {
 		deuda += compra.precio;
 	});
 
-	deudaTotal += deuda;
+	return { nombre: persona.nombre, deuda: deuda }
 });
 
-console.log("La deuda total es $" + deudaTotal);
+console.log(deudas);
