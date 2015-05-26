@@ -1,17 +1,29 @@
-getMensaje = function() {
-	var a = 1;
-	var b = 2;
-	return "La edad de la persona más 10 es ";
-}
+var personas = [
+	{
+		nombre: "Carlos",
+		compras: [
+			{ nombre: "Notebook DELL", precio: 9020.23 },
+			{ nombre: "Lámpara de bajo consumo", precio: 200 },
+			{ nombre: "Chicles masticables", precio: 9 }
+		]
+	},
+	{
+		nombre: "Juan",
+		compras: [
+			{ nombre: "Papelitos", precio: 10 },
+			{ nombre: "Coca-Cola", precio: 25 },
+		]
+	}
+]
 
-imprimirUnaCuentaBoluda = function(persona) {
-	var mensajeInicial = getMensaje();
-	var edadModificada = persona.edad + 10;
-	console.log(mensajeInicial + edadModificada);
-};
+var deudaTotal = 0;
+personas.forEach(function(persona) {
+	var deuda = 0;
+	persona.compras.forEach(function(compra) {
+		deuda += compra.precio;
+	});
 
-var persona = { nombre: "Rodri", edad: 23 }
+	deudaTotal += deuda;
+});
 
-imprimirUnaCuentaBoluda(persona);
-
-console.log("Hola " + persona.nombre + ", ¿qué hacés?");
+console.log("La deuda total es $" + deudaTotal);
