@@ -14,4 +14,4 @@ var persona = { nombre: "Rodri", edad: 23 }
 
 imprimirUnaCuentaBoluda(persona);
 
-console.log("Hola " + persona.nombre + ", ¿cómo va?");
+console.log("Hola " + persona.nombre + ", ¿qué hacés?");
